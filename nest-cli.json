@@ -1,8 +1,32 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/rentcar/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/rentcar/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/rentcar",
+  "projects": {
+    "rentcar": {
+      "type": "application",
+      "root": "apps/rentcar",
+      "entryFile": "main",
+      "sourceRoot": "apps/rentcar/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/rentcar/tsconfig.app.json"
+      }
+    },
+    "rentcar-batch": {
+      "type": "application",
+      "root": "apps/rentcar-batch",
+      "entryFile": "main",
+      "sourceRoot": "apps/rentcar-batch/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/rentcar-batch/tsconfig.app.json"
+      }
+    }
   }
 }
