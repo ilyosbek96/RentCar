@@ -3,6 +3,6 @@ import { MemberResolver } from './member.resolver';
 import { MemberService } from './member.service';
 
 @Module({
-  providers: [MemberResolver, MemberService]
+	providers: [MemberResolver, MemberService],
 })
 export class MemberModule {}
